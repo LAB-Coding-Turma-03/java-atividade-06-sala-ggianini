@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import br.com.impacta.models.*;
 import org.junit.Test;
 
-class JavaSpringTemplateApplicationTests {
+public class JavaSpringTemplateApplicationTests {
 
 	@Test
 	public void shouldHaveBuscarProdutoAsStaticMethod() {
@@ -14,16 +14,15 @@ class JavaSpringTemplateApplicationTests {
 		ArrayList<Produto> listaDeProdutos = new ArrayList<>();
 		
 		Produto produto = new Produto();
-		produto.codigo = 1;
-		produto.descricao = "Camisa";
-		produto.valor = 70.00;
+		produto.setCodigo(1);
+		produto.setDescricao("Camisa");
+		produto.setValor(70.00);
 		
 		listaDeProdutos.add(produto);
 		
 		Produto produtoEncontrado = Produto.buscarProdutoPeloId(listaDeProdutos, 1);
 		
-		
-		assertEquals("Camisa", produtoEncontrado.descricao);
+		assertEquals("Camisa", produtoEncontrado.getDescricao());
 		
 	}
 
@@ -33,15 +32,15 @@ class JavaSpringTemplateApplicationTests {
 		ArrayList<Produto> listaDeProdutos = new ArrayList<>();
 		
 		Produto produto = new Produto();
-		produto.codigo = 15;
-		produto.descricao = "Tenis";
-		produto.valor = 200.00;
+		produto.setCodigo(15);
+		produto.setDescricao("Tenis");
+		produto.setValor(200.0);
 		
 		listaDeProdutos.add(produto);
 		
 		Produto produtoEncontrado = Produto.buscarProdutoPeloId(listaDeProdutos, 15);
 		
-		assertEquals("Tenis", produtoEncontrado.descricao);
+		assertEquals("Tenis", produtoEncontrado.getDescricao());
 	}
 	
 }
